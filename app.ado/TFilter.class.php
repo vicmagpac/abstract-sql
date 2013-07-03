@@ -57,7 +57,7 @@ class TFilter extends TExpression
 			$return = 'NULL';
 		}else if(is_bool($value)) {
 			//caso seja booleano, armazena TRUE ou FALSE
-			$return = $value ? 'TRUE' : 'FALSE';
+			$result = $value ? 'TRUE' : 'FALSE';
 		}else{
 			$result = $value;
 		}
