@@ -12,13 +12,20 @@ $criteria->add(new TFilter('idade', '>', 60), TExpression::OR_OPERATOR);
 echo $criteria->dump();
 echo "<br />\n";
 
-//vemos um criterio utilizando o operador lógico AND juntamente com os operadores
-//de conjunto IN (dentro do conjunto) e NOT IN (fora do conjunto)
-//a idade deve estar dentro do conjunto (24, 25, 26) e deve está fora do conjunto (10)
 $criteria = new TCriteria;
 $criteria->add(new TFilter('idade', '<', 16), TExpression::OR_OPERATOR);
 $criteria->add(new TFilter('idade', '>', 60), TExpression::OR_OPERATOR);
 echo $criteria->dump();
 echo "<br />\n";
+
+//aqui vemos um exemplo de critério utilizando os operadores '=' e IS NOT
+//neste caso, o telefone não pode conter valor nulo(IS NOT NULL)
+//e o sexo deve ser feminino (sexo=F)
+$criteria = new TCriteria;
+$criteria->add('telefone', 'IS NOT', NULL);
+$criteria->add('sexo', '=', 'F');
+echo $criteria->dump();
+echo "<br />\n";
+
 
 
