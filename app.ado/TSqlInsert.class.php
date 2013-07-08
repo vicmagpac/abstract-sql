@@ -6,7 +6,7 @@
 final class TSqlInsert extends TSqlInstruction
 {
     /**
-     * método setRowData(
+     * método setRowData()
      * Atribui valores à determinadas colunas do banco de dados que serão inseridas
      * @param $column = coluna da tabela
      * @param #value = valor a ser inserido
