@@ -35,7 +35,7 @@ final class TSqlInsert extends TSqlInstruction
      * método setCriteria()
      * não existe no contexto desta classe, logo irá lançar um erro se for executado
      */
-    public function setCriteria($criteria)
+    public function setCriteria(TCriteria $criteria)
     {
         //lança um erro
         throw new Exception("Cannot call setCriteria from " . __CLASS__);
@@ -53,7 +53,7 @@ final class TSqlInsert extends TSqlInstruction
         // monta uma string contendo os valores
         $values = implode(', ', array_values($this->columnValues));
         $this->sql .= $columns . ')';
-        $this->sql .= "VALUES ({$values})";
+        $this->sql .= " VALUES ({$values})";
         
         return $this->sql;
     }
