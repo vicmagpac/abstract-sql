@@ -8,7 +8,7 @@ abstract class TSqlInstruction
 {	
 	protected $sql;		//armazena a instrução sql
 	protected $criteria;	//armazena o objeto critério
-        protected $entity;
+    protected $entity;
 
 	/**
 	* método setEntity()
